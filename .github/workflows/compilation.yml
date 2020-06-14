@@ -20,20 +20,3 @@ jobs:
     - name: Prepare vanilla sdk
       run: |
         ./build.sh
-        
-    # - name: Compile samples
-    #   if: ${{ success() }}
-    #   run: |
-    #     cp -rv $PS2SDK/samples ~/
-    #     make -C ~/samples
-    
-    - name: Get short SHA
-      id: slug
-      run: echo "::set-output name=sha8::$(echo ${GITHUB_SHA} | cut -c1-8)"
-
-    - name: Upload artifacts
-      if: ${{ success() }}
-      uses: actions/upload-artifact@v2
-      with:
-        name: sdkvanilla-${{ steps.slug.outputs.sha8 }}
-        path: /usr/local/orbisdev
