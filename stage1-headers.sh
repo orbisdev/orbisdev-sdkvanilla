@@ -1,11 +1,9 @@
 #/bin/bash
 set -e
 
-git clone --depth 1 https://github.com/orbisdev/orbis-headers.git
+git clone --depth 1 https://github.com/orbisdev/orbisdev-headers.git
 
-cd orbis-headers
-# Remove all files, just keeping headers
-find . -type f ! -iname "*.h" -delete
+cd orbisdev-headers
 
 mkdir $ORBISDEV/include
 cp -r * $ORBISDEV/include
