@@ -5,7 +5,7 @@ Compiler ?= clang -v
 CompilerCpp ?= clang++ -v
 Linker ?= clang -v
 Archiver ?= orbis-ar
-ObjectCopy ?= objcopy
+ObjectCopy ?= orbis-objcopy
 
 ###################################
 
