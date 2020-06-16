@@ -4,7 +4,7 @@ Assembler ?= clang
 Compiler ?= clang++ 
 CompilerCpp ?= clang++ 
 Linker ?= clang
-Archiver ?= ar
+Archiver ?= orbis-ar
 ObjectCopy ?= llvm-objcopy
 
 ###################################
