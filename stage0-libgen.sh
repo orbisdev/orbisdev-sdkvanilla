@@ -12,6 +12,5 @@ do
     clang --target=x86_64-scei-ps4 -shared -nostdlib -o  ${i%.S}_stub.so $i
 done
 
-mkdir $ORBISDEV/lib
-cp *.so $ORBISDEV/lib
-
+mkdir -p $ORBISDEV/usr/lib
+cp *.so $ORBISDEV/usr/lib
