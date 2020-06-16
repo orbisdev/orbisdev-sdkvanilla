@@ -1,5 +1,5 @@
 ###################################
-IncludePath += -I$(PS4SDK)/include/orbis
+IncludePath += -I$(ORBISDEV)/usr/include/orbis
 AssemblerFlags += -target x86_64-scei-ps4 -D_BSD_SOURCE
 CompilerFlags += -ffreestanding -fno-builtin -fno-stack-protector -target x86_64-scei-ps4 -D__PS4__ -D_BSD_SOURCE -fPIC
 CompilerFlagsCpp += -ffreestanding -fno-builtin -fno-stack-protector -target x86_64-scei-ps4 -D__PS4__ -D_BSD_SOURCE -fPIC
