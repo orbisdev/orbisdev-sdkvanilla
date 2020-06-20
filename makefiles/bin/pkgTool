@@ -1,1 +1,1 @@
-dotnet $ORBISDEV/bin/pkgtool/PkgTool.Core.dll  $* 2>&1
+dotnet $ORBISDEV/bin/pkgtools/PkgTool.Core.dll  $* 2>&1
