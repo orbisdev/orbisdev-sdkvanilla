@@ -12,8 +12,8 @@ ObjectCopy ?= llvm-objcopy
 MakePath := $(dir $(lastword $(MAKEFILE_LIST)))
 
 SourcePath ?= source
-IncludePath ?= -isysroot $(PS4SDK) -I. -Iinclude
-LibPath ?= -isysroot $(PS4SDK) -L. -Llib
+IncludePath ?= -isysroot $(ORBISDEV)/usr -I. -Iinclude
+LibPath ?= -isysroot $(ORBISDEV)/usr -L. -Llib
 LibraryPath ?= $(LibPath)
 BuildPath ?= build
 OutPath ?= bin
