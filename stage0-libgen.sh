@@ -9,7 +9,7 @@ cd lib_s
 
 for i in *.S
 do
-    clang --target=x86_64-scei-ps4 -nostdlib -m64 -c -o  ${i%.S}_stub.o $i
+    clang --target=x86_64-scei-ps4 -nostdlib -m64 -c -o  ${i%.S}.o $i
 done
 
 for i in *.o
