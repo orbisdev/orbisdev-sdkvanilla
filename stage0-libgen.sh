@@ -10,11 +10,7 @@ cd lib_s
 for i in *.S
 do
     clang --target=x86_64-scei-ps4 -nostdlib -m64 -c -o  ${i%.S}.o $i
-done
-
-for i in *.o
-do
-    orbis-ld --eh-frame-hdr -Bshareable --enable-new-dtags -o ${i%.o}_stub.so $i
+    orbis-ld --eh-frame-hdr -Bshareable --enable-new-dtags -o ${i%.S}_stub.so ${i%.S}.o
 done
 
 mkdir -p $ORBISDEV/usr/lib
