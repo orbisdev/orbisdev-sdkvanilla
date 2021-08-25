@@ -9,7 +9,7 @@ cd lib_s
 
 for i in *.S
 do
-    clang --target=x86_64-scei-ps4 -shared -nostdlib -o  ${i%.S}_stub.so $i
+    clang --target=x86_64-scei-ps4 -shared -nostdlib -o  ${i%.S}_stub.so $i --verbose
 done
 
 mkdir -p $ORBISDEV/usr/lib
