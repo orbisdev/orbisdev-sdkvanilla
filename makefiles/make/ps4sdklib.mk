@@ -106,10 +106,9 @@ Lf ?=
 ###################################
 
 AssemblerFlags = -m64
-CompilerNoWarningFlags = -Wno-zero-length-array -Wno-format-pedantic
-CompilerFlags = -std=c11 -O3 -Wall -m64 -mcmodel=large $(CompilerNoWarningFlags) $(IncludePath) $(Debug)
-CompilerFlagsCpp = -std=c++11 -O3 -Wall -pedantic -m64 -mcmodel=large $(CompilerNoWarningFlags) $(IncludePath) $(Debug)
-LinkerFlags = -O3 -Wall -m64 $(LibraryPath) $(Debug)
+CompilerFlags = -std=c11 -O3 -Wall $(IncludePath) $(Debug)
+CompilerFlagsCpp = -std=c++11 -O3 -Wall $(IncludePath) $(Debug)
+LinkerFlags = $(LibraryPath) $(Debug)
 ArchiverFlags = rcs
 
 ###################################

@@ -106,10 +106,9 @@ Lf ?=
 ###################################
 
 AssemblerFlags = -m64
-CompilerNoWarningFlags = -Wno-zero-length-array -Wno-format-pedantic
-CompilerFlags = -std=c11 -O3 -Wall -m64 -mcmodel=large $(CompilerNoWarningFlags) $(IncludePath) $(Debug)
-CompilerFlagsCpp = -std=c++11 -O3 -Wall -pedantic -m64 -mcmodel=large $(CompilerNoWarningFlags) $(IncludePath) $(Debug)
-LinkerFlags = -O3 -Wall -m64 $(LibraryPath) $(Debug)
+CompilerFlags = -std=c11 -O3 -Wall $(IncludePath) $(Debug)
+CompilerFlagsCpp = -std=c++11 -O3 -Wall $(CompilerNoWarningFlags) $(IncludePath) $(Debug)
+LinkerFlags = $(LibraryPath) $(Debug)
 ArchiverFlags = rcs
 
 ###################################
@@ -147,6 +146,9 @@ ObjectFiles	+= \
 	$(patsubst $(SourcePath)/%.c, $(BuildPath)/%.c.o, $(SourceFilesC)) \
 	$(patsubst $(SourcePath)/%.s, $(BuildPath)/%.s.o, $(SourceFilesS))
 
+### ADD CRT ###
+
+
 TargetFile ?= $(basename $(notdir $(CURDIR)))
 AllTarget ?= $(OutPath)/$(TargetFile)
 CleanTarget ?= rm -fR $(BuildPath) $(OutPath)
@@ -156,7 +158,6 @@ CleanTarget ?= rm -fR $(BuildPath) $(OutPath)
 assemble = $(Assembler) $(Sf) -c $< $(AssemblerFlags) -o $@
 compile = $(Compiler) $(Cf)  $(CompilerFlags) -o $@ $<
 compileCpp = $(CompilerCpp) $(Cppf) -c $< $(CompilerFlagsCpp) -o $@
-#link = $(Linker) $(Lf) $(call uniq,$? $(ObjectFiles)) $(CrtFile) $(LinkerFlags) $(Libraries) -o $@
 link = $(Linker) $(Lf) $(CrtFile) $(call uniq,$? $(ObjectFiles)) $(LinkerFlags) $(Libraries) -o $@
 archive = $(Archiver) $(ArchiverFlags) $@ $(call uniq,$? $(ObjectFiles))
 
