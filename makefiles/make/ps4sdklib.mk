@@ -3,7 +3,7 @@
 Assembler ?= clang
 Compiler ?= clang -v
 CompilerCpp ?= clang++ -v
-Linker ?= clang -v
+Linker ?= orbis-ld -v
 Archiver ?= orbis-ar
 ObjectCopy ?= orbis-objcopy
 
