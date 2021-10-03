@@ -13,7 +13,7 @@ MakePath := $(dir $(lastword $(MAKEFILE_LIST)))
 
 SourcePath ?= source
 IncludePath ?= -isysroot $(ORBISDEV)/usr -I. -Iinclude
-LibPath ?= $(ORBISDEV)/usr -L. -Llib
+LibPath ?= -L$(ORBISDEV)/usr/lib -L. -Llib
 LibraryPath ?= $(LibPath)
 BuildPath ?= build
 OutPath ?= bin
