@@ -1,6 +1,5 @@
 #/bin/bash
 set -e
 
-sh stage0-libgen.sh
-sh stage1-headers.sh
-sh stage2-makefiles.sh
+sh stage0-sysroot.sh
+sh stage1-makefiles.sh
