@@ -12,7 +12,7 @@ ObjectCopy ?= llvm-objcopy
 MakePath := $(dir $(lastword $(MAKEFILE_LIST)))
 
 SourcePath ?= source
-IncludePath ?= -isysroot $(ORBISDEV)/usr -I. -Iinclude
+IncludePath ?= -isysroot $(ORBISDEV) -I. -Iinclude
 LibPath ?= -L$(ORBISDEV)/usr/lib -L. -Llib
 LibraryPath ?= $(LibPath)
 BuildPath ?= build
