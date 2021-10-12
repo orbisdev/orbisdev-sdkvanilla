@@ -15,7 +15,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        apk add build-base git ncurses-dev
+        apk add build-base git ncurses-dev tar
 
     - name: Prepare vanilla sdk
       run: |
