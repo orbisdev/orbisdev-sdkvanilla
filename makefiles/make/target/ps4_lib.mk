@@ -5,7 +5,7 @@ AssemblerFlags += $(PlatformFlags)
 CompilerFlags += $(PlatformFlags)
 CompilerFlagsCpp += $(PlatformFlags)
 LinkerFlags += -Wl,--gc-sections,--gc-keep-exported -L$(PS4SDK)/lib
-CrtFile ?= $(ORBISDEV)/crt0.o  
+CrtFile ?= $(ORBISDEV)/usr/lib/crt0.o  
 ###################################
 all:: $(AllTarget)
 clean::
