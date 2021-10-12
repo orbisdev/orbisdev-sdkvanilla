@@ -4,7 +4,7 @@ FROM $BASE_DOCKER_IMAGE
 
 COPY . /src
 
-RUN apk add build-base git ncurses-dev tar
+RUN apk add build-base git ncurses-dev
 RUN cd /src && ./build.sh
 
 # Second stage of Dockerfile
