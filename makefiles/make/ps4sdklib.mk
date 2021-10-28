@@ -12,8 +12,8 @@ ObjectCopy ?= orbis-objcopy
 MakePath := $(dir $(lastword $(MAKEFILE_LIST)))
 
 SourcePath ?= source
-IncludePath ?= -isysroot $(ORBISDEV)/usr -I. -Iinclude
-LibPath ?= -isysroot $(ORBISDEV)/usr -L. -Llib
+IncludePath ?= -isysroot $(ORBISDEV) -I. -Iinclude
+LibPath ?= -isysroot $(ORBISDEV) -L. -Llib
 LibraryPath ?= $(LibPath)
 BuildPath ?= build
 OutPath ?= bin
