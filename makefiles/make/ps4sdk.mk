@@ -142,9 +142,9 @@ endif
 SourceFilesS := $(filter-out $(SourceFilterS),$(SourceFilesS))
 
 ObjectFiles	+= \
-	$(patsubst $(SourcePath)/%.cpp, $(BuildPath)/%.cpp.o, $(SourceFilesCpp)) \
-	$(patsubst $(SourcePath)/%.c, $(BuildPath)/%.c.o, $(SourceFilesC)) \
-	$(patsubst $(SourcePath)/%.s, $(BuildPath)/%.s.o, $(SourceFilesS))
+	$(patsubst $(SourcePath)/%.cpp, $(BuildPath)/%.o, $(SourceFilesCpp)) \
+	$(patsubst $(SourcePath)/%.c, $(BuildPath)/%.o, $(SourceFilesC)) \
+	$(patsubst $(SourcePath)/%.s, $(BuildPath)/%.o, $(SourceFilesS))
 
 TargetFile ?= $(basename $(notdir $(CURDIR)))
 AllTarget ?= $(OutPath)/$(TargetFile)
@@ -169,15 +169,15 @@ include $(MakePath)/target/$(strip $(Target)).mk
 
 ###################################
 
-$(BuildPath)/%.s.o: $(SourcePath)/%.s
+$(BuildPath)/%.o: $(SourcePath)/%.s
 	$(dirp)
 	$(assemble)
 
-$(BuildPath)/%.c.o: $(SourcePath)/%.c
+$(BuildPath)/%.o: $(SourcePath)/%.c
 	$(dirp)
 	$(compile)
 
-$(BuildPath)/%.cpp.o: $(SourcePath)/%.cpp
+$(BuildPath)/%.o: $(SourcePath)/%.cpp
 	$(dirp)
 	$(compileCpp)
 
